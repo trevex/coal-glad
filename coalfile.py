@@ -16,5 +16,5 @@ class GLADFile(CoalFile):
         cp('build/include', 'include')
         cp('build/*.a', 'libs/')
         cp('build/*.lib', 'libs/')
-    def info(self):
+    def info(self, deps):
         pass
