@@ -8,7 +8,7 @@ class GLADFile(CoalFile):
     options = {
         "profile": "core" # default is core, see glad repository for more valid options
     }
-    def prepare(self, infos):
+    def prepare(self):
         git_clone(self.url, 'master', 'src')
     def build(self):
         default_cmake_build('src/', 'build/', '-DGLAD_PROFILE="%s"' % self.options["profile"])
@@ -16,5 +16,5 @@ class GLADFile(CoalFile):
         cp('build/include', 'include')
         cp('build/*.a', 'libs/')
         cp('build/*.lib', 'libs/')
-    def info(self):
+    def info(self, generator):
         pass
