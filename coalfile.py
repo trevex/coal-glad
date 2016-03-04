@@ -17,7 +17,7 @@ class GLADFile(CoalFile):
         cp('build/*.a', 'libs/')
         cp('build/*.lib', 'libs/')
     def info(self, generator):
-        generator.add_library("GLAD", "-lglad")
+        generator.add_library("-lglad")
         generator.add_link_dir('libs/')
         generator.add_include_dir('include/')
         pass
